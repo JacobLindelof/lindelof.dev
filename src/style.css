@@ -1,0 +1,74 @@
+:root {
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: black;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  width: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: underline;
+}
+a:hover {
+  color: #bdc0ff;
+}
+
+.router-link-exact-active {
+  color: #bdc0ff;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
