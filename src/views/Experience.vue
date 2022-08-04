@@ -1,33 +1,12 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
-import JobTimeline from '../components/JobTimeline.vue';
+import JobCard from '../components/JobCard.vue';
 
 const resume = reactive({
-  name: 'jacob lindelof',
-  title: 'full stack software engineer',
-  email: 'jacob@lindelof.co',
-  about: 'I am a full stack software engineer with over 5 years experience developing production ready applications in multiple programing languages and frameworks. As well as more than a decade of experience working with both Unix and Windows servers. My varied experience and high aptitude for picking up new skills and technologies quickly allow me to jump between projects and environments with ease.',
-  skills: [
-    "Strong Communication",
-    "High Aptitude",
-    "Creative Thinking",
-    "Problem Solving",
-    "Multi Tasking",
-  ],
-  technologies: [
-    "Python (Django, Flask, FastAPI)",
-    "Javascript/Typescript (Node, Vue, Electron)",
-    "C# (ASP.NET Core, Entity Framework, WFP/UWP)",
-    "SQL (MSSQL, PostgreSQL)",
-    "Docker",
-    "AWS",
-    "VMWare ",
-    "Unix",
-    "Windows Server",
-  ],
   professionalExperience: [
     {
       company: 'Blue Streak Docs, LLC',
+      location: 'Clearwater, FL',
       positions: [
         {
           title: 'VP of Information Technology',
@@ -54,6 +33,7 @@ const resume = reactive({
     },
     {
       company: 'Pinellas Computers',
+      location: 'Largo, FL',
       positions: [
         {
           title: 'Computer Technician',
@@ -72,6 +52,7 @@ const resume = reactive({
     },
     {
       company: 'Peter Wittwer',
+      location: 'Largo, FL',
       positions: [
          {
           title: 'Junior Systems Administrator',
@@ -90,24 +71,43 @@ const resume = reactive({
   ],
   independentExperience: [
     {
-      name: "Tampa Esports",
-      position: "Event Coordinator, Network Admin, Server Admin",
+      company: "Tampa Esports",
+      location: 'Largo, FL',
+      positions: [{
+        title: "Event Coordinator, Network Admin, Server Admin",
+        start: "July 2013",
+        end: "Present",
+      }],
       start: "July 2013",
       end: "Present",
       description: "At Tampa Esports I was the primary person responsible for running our entire local network and server infrastructure for our multiple 200+ attendee events a year. I am also an integral part of the event planning team leading up to our events.",
+      highlights: []
     },
     {
-      name: "Esports Arena",
-      position: "Game Server Administrator",
+      company: "Esports Arena",
+      location: 'Santa Ana, CA',
+      positions: [{
+        title: "Game Server Administrator",
+        start: "June 2016",
+        end: "February 2017",
+      }],
       start: "June 2016",
       end: "February 2017",
       description: 'As an expert at running Counter Strike game servers and tournaments, from my experience working with Tampa Esports, I was brought in multiple times to assist their in-house staff in setting up their servers, and running their tournaments both on site and remotely once their initial server configuration had been completed.',
+      highlights: []
     },
     {
-      name: "Dreamhack Austin",
-      position: "Network Admin",
-      date: "May 2016",
-      description: "As a volunteer on the network team at Dreamhack Austin 2016, Dreamhack's first event in North America, I was partly responsible for the initial setup, and subsequent maintenance and monitoring of a temporary large scale network supporting various high bandwidth requirement livestreams and online tournament productions. In addition  to over 1000 in person attendees."
+      company: "Dreamhack",
+      location: 'Austin, TX',
+      positions: [{
+        title: "Network Admin",
+        start: "May 2016",
+        end: null,
+      }],
+      start: "May 2016",
+      end: null,
+      description: "As a volunteer on the network team at Dreamhack Austin 2016, Dreamhack's first event in North America, I was partly responsible for the initial setup, and subsequent maintenance and monitoring of a temporary large scale network supporting various high bandwidth requirement livestreams and online tournament productions. In addition  to over 1000 in person attendees.",
+      highlights: []
     },
   ],
   
@@ -116,6 +116,19 @@ const resume = reactive({
 
 <template>
 <div class="flex justify-center">
-  <JobTimeline :jobs="resume.independentExperience" />
+  <div class="max-w-7xl">
+    <h1
+      class="text-4xl text-center my-10 tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl"
+    >
+      Professional Experience
+    </h1>
+    <JobCard v-for="job in resume.professionalExperience" :job="job" />
+    <h1
+      class="text-4xl text-center my-10 tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl"
+    >
+      Independent Experience
+    </h1>
+    <JobCard v-for="job in resume.independentExperience" :job="job" />
+  </div>
 </div>
 </template>

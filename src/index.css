@@ -11,3 +11,11 @@
         opacity: 0;
     }
 }
+
+:root{
+    color-scheme: light dark;
+}
+
+html {
+    overflow: hidden;
+}
