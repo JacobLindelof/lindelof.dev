@@ -58,7 +58,7 @@ onMounted(() => {
 <style>
 .slide-left-enter-active,
 .slide-left-leave-active {
-  transition: all 0.2s ease-out;
+  transition: all 0.5s ease-out;
 }
 .slide-left-enter-to {
   position: absolute;
@@ -79,7 +79,7 @@ onMounted(() => {
 
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.2s ease-out;
+  transition: all 0.5s ease-out;
 }
 .slide-right-enter-to {
   position: absolute;
@@ -104,6 +104,19 @@ onMounted(() => {
 }
 .scale-enter-from,
 .scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.full-scale-enter-active,
+.full-scale-active {
+  transition: all 0.5s ease;
+}
+.full-scale-enter-from {
+  animation-delay: .5s;
+  opacity: 0;
+  transform: scale(0.9);
+}
+.full-scale-leave-to {
   opacity: 0;
   transform: scale(0.9);
 }
