@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
+import JobTimeline from '../components/JobTimeline.vue';
 
 const resume = reactive({
   name: 'jacob lindelof',
@@ -114,109 +115,7 @@ const resume = reactive({
 </script>
 
 <template>
-<div class="resume">
-  <div class="resume-sidebar">
-    <div class="sidebar-content">
-      <p>{{ resume.name }}</p>
-      <p>{{ resume.title }}</p>
-      <p>safety harbor, fl</p>
-      <p><a href="mailto:jacob@lindelof.co">{{ resume.email }}</a></p>
-      <h5>Skills</h5>
-      <ul>
-        <li v-for="skill in resume.skills">{{ skill }}</li>
-      </ul>
-      <h5>Technologies</h5>
-      <ul>
-        <li v-for="tech in resume.technologies">{{ tech }}</li>
-      </ul>
-    </div>
-  </div>
-  <div class="resume-content">
-    <div class="resume-section">
-      <h1>About</h1>
-      <p>{{resume.about}}</p>
-    </div>  
-    <div class="resume-section">
-      <h1>Professional Experience</h1>
-      <div v-for="job in resume.professionalExperience" class="resume-job">
-        <div class="resume-job-header">
-          <h2>{{ job.company }}</h2>
-          <h3>{{ job.start }} - {{ job.end }}</h3>
-        </div>
-        <div class="resume-job-titles">
-          <h4 v-for="position in job.positions">- {{ position.title }}  • {{position.start}} - {{position.end}}</h4>
-        </div>
-        <div class="resume-job-body">
-          <p>{{ job.description }}</p>
-          <h5>Highlights</h5>
-          <ul>
-            <li v-for="highlight in job.highlights">{{ highlight }}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="resume-section">
-      <h1>Independent Experience</h1>
-      <div v-for="job in resume.independentExperience" class="resume-job">
-        <div class="resume-job-header">
-          <h2>{{ job.name }}</h2>
-          <h4 v-if="job.date">- {{ job.position }} • {{job.date}}</h4>
-          <h4 v-else>- {{ job.position }} • {{job.start}} - {{job.end}}</h4>
-        </div>
-        <div class="resume-job-body">
-          <p>{{ job.description }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="flex justify-center">
+  <JobTimeline :jobs="resume.independentExperience" />
 </div>
 </template>
-
-<style scoped>
-.resume {
-  display: flex;
-}
-
-.resume-sidebar {
-  width: 20rem;
-  border-right: 1px solid #ccc;
-  max-height: calc(100vh - 60px);
-  overflow-y: auto;
-}
-.sidebar-content {
-  padding: 1rem;
-}
-
-.resume-content {
-  flex: 1;
-  max-height: calc(100vh - 60px);
-  overflow-y: auto;
-}
-
-.resume-section {
-  padding: 1rem;
-  border-bottom: 1px solid #ccc;
-}
-
-@media screen and (max-width: 1024px){
-  .resume {
-    display: flex;
-    flex-direction: column;
-  }
-  .resume-sidebar {
-    width: auto;
-    border-right: none;
-    border-bottom: 1px solid #ccc;
-    max-height: auto;
-    overflow-y: auto;
-  }
-  .sidebar-content {
-    padding: 1rem;
-  }
-
-  .resume-content {
-    max-height: 100%;
-    overflow-y: auto;
-  }
-}
-</style>

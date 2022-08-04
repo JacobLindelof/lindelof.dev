@@ -1,17 +1,14 @@
 <script setup lang="ts">
-
+import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
-<div class="container">
-  <div class="header">
-    <p><router-link to="/">home</router-link> • <router-link to="/resume">resume</router-link> • <a target="_blank" href="https://github.com/Unholypanda/">github</a> • <a target="_blank" href="https://www.linkedin.com/in/jlindelof/">linkedin</a> • <a href="mailto:jacob@lindelof.dev">contact</a></p>
-  </div>
-  <div class="content">
+<div class="h-screen overflow-y-scroll flex flex-col">
+  <NavBar></NavBar>
+  <main class="grow">
     <router-view></router-view>
-  </div>
+  </main>
 </div>
-
 </template>
 
 <style scoped>

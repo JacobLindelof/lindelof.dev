@@ -1,19 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
+import Experience from '../views/Experience.vue'
+import Projects from '../views/Projects.vue'
+import About from '../views/About.vue'
 import PageNotFoundVue from '../views/PageNotFound.vue'
-import Resume from '../views/Resume.vue'
 
 const routes = [
     { 
         path: '/', 
-        name: "Main",
+        name: "Home",
         component: Home 
     },
     { 
-        path: '/resume',
-        name: "Resume",
-        component: Resume,
+        path: '/about',
+        name: "About",
+        component: About,
+    },
+    { 
+        path: '/experience',
+        name: "Experience",
+        component: Experience,
+    },
+    { 
+        path: '/projects',
+        name: "Projects",
+        component: Projects,
     },
     {
         path: "/:catchAll(.*)",
