@@ -19,7 +19,7 @@ const props = defineProps<{
       }}</span>
     </h3>
     <ol class="text-slate-900 dark:text-slate-300 mt-2 text-md">
-      <li v-for="position in job.positions">
+      <li v-for="position in job.positions" :key="position.title">
         {{ position.title }},
         <span class="text-xs italic"
           >{{ position.start }} - {{ position.end }}</span
@@ -30,7 +30,7 @@ const props = defineProps<{
       {{ job.description }}
     </p>
     <ol class="text-slate-900 dark:text-slate-100 list-disc px-7 pt-4 text-sm">
-      <li v-for="hightlight in job.highlights">{{ hightlight }}</li>
+      <li v-for="hightlight in job.highlights" :key="hightlight">{{ hightlight }}</li>
     </ol>
   </div>
 </template>

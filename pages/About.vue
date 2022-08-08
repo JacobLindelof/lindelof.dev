@@ -31,7 +31,7 @@ const technologies = [
           </p>
           <h2 class="text-xl text-base mt-5 mb-3 font-bold text-gray-900 dark:text-white">Skills</h2>
           <ul class="text-slate-900 dark:text-slate-100 list-disc px-7 text-sm">
-            <li v-for="tech in technologies">{{ tech }}</li>
+            <li v-for="tech in technologies" :key="tech">{{ tech }}</li>
           </ul>
         </div>
       </div>

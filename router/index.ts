@@ -14,6 +14,7 @@ import Experience from '../views/Experience.vue'
 import Projects from '../views/Projects.vue'
 import About from '../views/About.vue'
 import PageNotFoundVue from '../views/PageNotFound.vue'
+import Resume from '../views/Resume.vue'
 
 const routes = [
     { 
@@ -40,11 +41,17 @@ const routes = [
         component: Projects,
         meta: {index: 3, transitionName: undefined}
     },
+    { 
+        path: '/resume',
+        name: "Resume",
+        component: Resume,
+        meta: {index: -1, transitionName: undefined}
+    },
     {
         path: "/:catchAll(.*)",
         name: "NotFound",
         component: PageNotFoundVue,
-        meta: {index: -1, transitionName: undefined}
+        meta: {index: 0, transitionName: undefined}
     }
 ]
 

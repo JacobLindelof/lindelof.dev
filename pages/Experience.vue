@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
-import JobCard from '../components/JobCard.vue';
-
 const resume = reactive({
   professionalExperience: [
     {
@@ -122,13 +119,13 @@ const resume = reactive({
     >
       Professional Experience
     </h1>
-    <JobCard v-for="job in resume.professionalExperience" :job="job" />
+    <JobCard v-for="job in resume.professionalExperience" :job="job" :key="job.company" />
     <h1
       class="text-4xl text-center my-10 tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl"
     >
       Independent Experience
     </h1>
-    <JobCard v-for="job in resume.independentExperience" :job="job" />
+    <JobCard v-for="job in resume.independentExperience" :job="job" :key="job.company" />
   </div>
 </div>
 </template>

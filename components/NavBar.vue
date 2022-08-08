@@ -1,6 +1,54 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
+<script setup lang="ts">
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
+import { MenuIcon, XIcon } from "@heroicons/vue/outline";
+
+const colorMode = useColorMode();
+const changeColorMode = () => {
+  if (colorMode.value == "light") {
+    colorMode.preference = "dark";
+  } else {
+    colorMode.preference = "light";
+  }
+};
+
+const links = [
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Experience",
+    href: "/experience",
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+  },
+];
+
+const socials = [
+  {
+    name: "GitHub",
+    href: "https://github.com/Unholypanda",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/jlindelof/",
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/Unholypanda/",
+  },
+  {
+    name: "Email",
+    href: "mailto:jacob@lindelof.co",
+  },
+];
+</script>
+
 <template>
   <Popover
+    id="nav-bar"
     class="relative sticky top-0 z-30 bg-opacity-50 backdrop-blur backdrop-filter dark:bg-gray-900 dark:bg-opacity-50 border-b border-gray-200 dark:border-gray-800"
   >
     <div class="mx-auto px-4 sm:px-6">
@@ -44,39 +92,41 @@
           </router-link>
         </div>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <button
-            id="theme-toggle"
-            type="button"
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
-            @click="emit('colorModeChanged', !darkMode)"
-          >
-            <svg
-              v-if="darkMode"
-              id="theme-toggle-light-icon"
-              class="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
+          <ColorScheme tag="span">
+            <button
+              id="theme-toggle"
+              type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm"
+              @click="changeColorMode"
             >
-              <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <svg
-              v-else
-              id="theme-toggle-dark-icon"
-              class="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-              ></path>
-            </svg>
-          </button>
+              <svg
+                v-if="colorMode.value == 'dark'"
+                id="theme-toggle-light-icon"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <svg
+                v-else
+                id="theme-toggle-dark-icon"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+            </button>
+          </ColorScheme>
         </div>
       </div>
     </div>
@@ -115,7 +165,9 @@
                   :to="item.href"
                   class="-m-3 p-3 flex items-center rounded-md"
                 >
-                  <span class="ml-3 text-base font-medium text-gray-900 dark:text-white dark:hover:text-slate-400">
+                  <span
+                    class="ml-3 text-base font-medium text-gray-900 dark:text-white dark:hover:text-slate-400"
+                  >
                     {{ item.name }}
                   </span>
                 </router-link>
@@ -140,69 +192,3 @@
     </transition>
   </Popover>
 </template>
-
-<script setup lang="ts">
-import {
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from "@headlessui/vue";
-import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorClickIcon,
-  MenuIcon,
-  PhoneIcon,
-  PlayIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
-  XIcon,
-} from "@heroicons/vue/outline";
-import { ChevronDownIcon } from "@heroicons/vue/solid";
-
-const props = defineProps<{
-  darkMode: boolean | null;
-}>();
-
-const emit = defineEmits<{
-  (e: "colorModeChanged", mode: boolean): void;
-}>();
-
-const links = [
-  {
-    name: "About",
-    href: "/about",
-  },
-  {
-    name: "Experience",
-    href: "/experience",
-  },
-  {
-    name: "Projects",
-    href: "/projects",
-  },
-];
-
-const socials = [
-  {
-    name: "GitHub",
-    href: "https://github.com/Unholypanda",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/jlindelof/",
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com/Unholypanda/",
-  },
-  {
-    name: "Email",
-    href: "mailto:jacob@lindelof.co",
-  },
-];
-</script>

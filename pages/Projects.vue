@@ -28,6 +28,7 @@ const projects = [
       <div class="px-4">
         <div v-for="project in projects"
           class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl w-full mb-4"
+          :key="project.name"
         >
           <div class="flex">
             <h3
