@@ -9,7 +9,7 @@ module.exports = {
   ],
   deploy : {
     production : {
-      key: "C:\Users\jlind/.ssh/id_rsa",
+      key: "C:/Users/jlind/.ssh/id_rsa",
       user: 'jlindelof',
       host: ['lindelof.dev'],
       ref: 'origin/master',
