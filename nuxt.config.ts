@@ -3,7 +3,7 @@ import { defineNuxtConfig } from "nuxt";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   build: {
-    transpile: ['@heroicons/vue']
+    transpile: ['@heroicons/vue', '@headlessui/vue']
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode',  '@nuxt/content'],
   colorMode: {
