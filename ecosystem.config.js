@@ -15,7 +15,7 @@ module.exports = {
       repo: 'git@github.com:Unholypanda/lindelof.dev.git',
       ssh_options: ['ForwardAgent=yes'],
       path: '/home/jlindelof/lindelof.dev/',
-      'post-deploy' : 'npm install && npm build build && pm2 startOrRestart ecosystem.config.js --env production'
+      'post-deploy' : 'npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production'
     }
   }
 }
