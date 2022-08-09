@@ -57,7 +57,7 @@ const socials = [
       >
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <router-link
-            class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white hover:text-slate-400"
+            class="text-base font-medium text-indigo-600 dark:text-indigo-400"
             to="/"
           >
             <span>Jacob Lindelof</span><span class="blinking">_</span>
@@ -74,7 +74,7 @@ const socials = [
         <div class="hidden md:flex space-x-10">
           <router-link
             to="/about"
-            class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white hover:text-slate-400"
+            class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white dark:hover:text-slate-400"
           >
             About
           </router-link>
@@ -86,7 +86,7 @@ const socials = [
           </router-link>
           <router-link
             to="/projects"
-            class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white hover:text-slate-400"
+            class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white dark:hover:text-slate-400"
           >
             Projects
           </router-link>
@@ -158,18 +158,14 @@ const socials = [
               </div>
             </div>
             <div class="mt-6">
-              <nav class="grid gap-y-8">
+              <nav class="grid">
                 <router-link
                   v-for="item in links"
                   :key="item.name"
                   :to="item.href"
-                  class="-m-3 p-3 flex items-center rounded-md"
+                  class="ml-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 dark:text-white dark:hover:text-slate-400"
                 >
-                  <span
-                    class="ml-3 text-base font-medium text-gray-900 dark:text-white dark:hover:text-slate-400"
-                  >
-                    {{ item.name }}
-                  </span>
+                  {{ item.name }}
                 </router-link>
               </nav>
             </div>

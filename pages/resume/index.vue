@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import resume from '../assets/resume';
-
+import resume from '../../assets/resume';
+const { data } = await useAsyncData('resume', async () => queryContent('/testing').findOne())
 </script>
 
 <template>
@@ -94,28 +94,3 @@ import resume from '../assets/resume';
     </div>
   </div>
 </template>
-
-<style>
-@media print {
-  @page {
-      size: letter;
-  }
-  #main-container {
-    overflow: auto !important;
-  }
-  #nav-bar,
-  #page-heading {
-    display: none;
-  }
-  #resume-card {
-    padding: 0 !important;
-  }
-  #resume-container {
-        box-shadow: none;
-  }
-  .flex {
-    display: block !important;
-  }
-
-}
-</style>

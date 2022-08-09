@@ -16,8 +16,12 @@
   color-scheme: light dark;
 }
 
-html {
-  overflow: hidden;
+.light .router-link-exact-active {
+  color: rgb(79 70 229 / var(--tw-text-opacity)) !important;
+}
+
+.dark .router-link-exact-active {
+  color: rgb(129 140 248 / var(--tw-text-opacity)) !important;
 }
 
 .page-enter-from {

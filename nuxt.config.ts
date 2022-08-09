@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['@heroicons/vue']
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode',  '@nuxt/content'],
   colorMode: {
     classSuffix: ''
   },

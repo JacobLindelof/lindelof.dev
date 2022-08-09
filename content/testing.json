@@ -1,0 +1,117 @@
+{
+  "firstName": "Jacob",
+  "lastName": "Lindelof",
+  "age": 30,
+  "city": "Safety Harbor",
+  "state": "FL",
+  "zip": "34695",
+  "workExperience": [
+    {
+      "company": "Blue Streak Docs, LLC",
+      "location": "Clearwater, FL",
+      "positions": [
+        {
+          "title": "VP of Information Technology",
+          "start": "June 2018",
+          "end": "Present",
+          "highlights": [
+            "Helped the company transition into a modern technology focused company that uses software and solutions to provide a better product to our clients, with reduced costs and increased productivity",
+            "Utilized machine learning workflows for automating the interaction with real estate documents using AWS (Amazon Web Services) Textract and Comprehend.",
+            "Implemented multiple microservices (Python, C#) to support integration with our workflow software, 3rd party client systems, and other services.",
+            "Developed an inhouse desktop PDF viewer (C#/WPF) that integrated into our 3rd party workflow software *Providing* enhanced automation and efficiency when working with PDFs.",
+            "Created a full stack company intranet (Django, Vue) with in-depth reporting and business intelligence functionality, custom integrations with our workflow software, and tools to automate manual business processes.",
+            "Launched a full e-commerce website for individuals and smaller companies to order our services outside of our traditional workflow (Django, Vue, Stripe).",
+            "Migrated legacy systems to a fully virtualized highly available VMWare environment allowing for enhanced redundancy and reduced maintenance costs."
+          ]
+        },
+        {
+          "title": "IT Manager",
+          "start": "September 2013",
+          "end": "June 2018",
+          "highlights": [
+            "Management of the company's IT infrastructure, including servers, software, and networking equipment.",
+            "Developed a basic business intelligence dashboard for monitoring of company production statistics."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Tampa Esports",
+      "location": "Largo, FL",
+      "positions": [
+        {
+          "title": "Event Coordinator, Systems Administrator, Tournament Organizer",
+          "start": "July 2013",
+          "end": "Present",
+          "highlights": [
+            "Participated in event planning for multiple 200+ attendee esports and LAN events a year.",
+            "Handed setup and maintenance of our temporary network and server infrastructure.",
+            "Ran our headlining 16+ team Counter Strike: Global Offensive tournament."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Esports Arena",
+      "location": "Santa Ana, CA",
+      "positions": [
+        {
+          "title": "Game Server Administrator",
+          "start": "June 2016",
+          "end": "February 2017",
+          "highlights": [
+            "Performed onsite setup of multiple Counter Strike game servers to support semi regular in person tournaments.",
+            "Managed the tournaments both onsite and remotely until they were able to hire someone for me to train in the management of the servers."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Dreamhack",
+      "location": "Austin, TX",
+      "positions": [
+        {
+          "title": "Network Admin",
+          "start": "May 2016",
+          "end": null,
+          "highlights": [
+            "Pre event setup and post event teardown of the temporary 1000+ user network infrastructure.",
+            "Management of a network with rapidly fluctuating usage that needed real time traffic shaping to meet the level of quality that our attendees expected, and to support the multiple high profile esports tournaments throughout the event."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Pinellas Computers",
+      "location": "Largo, FL",
+      "positions": [
+        {
+          "title": "Computer Technician",
+          "start": "August 2012",
+          "end": "September 2013",
+          "highlights": [
+            "Aided in the development and implementation of a ticking system for customer service tracking.",
+            "Helped grow our small business division by providing our customers with server setup, email migrations, backup solutions, and more.",
+            "Automated various in-house diagnostic tasks to simplify our workflow and increase productivity."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Peter Wittwer",
+      "location": "Largo, FL",
+      "positions": [
+        {
+          "title": "Junior Systems Administrator",
+          "start": "June 2010",
+          "end": "August 2012",
+          "highlights": [
+            "Managed onsite network and server infrastructure including Active Directory, SQL, Exchange, and Web servers.",
+            "Zero downtime migration from locally hosted Exchange Server to Microsoft Online Services.",
+            "Executed a physical office relocation and simultaneous upgrade from Windows XP to Windows 7 with little to no negative impact to our employees."
+          ]
+        }
+      ]
+    }
+  ]
+}
