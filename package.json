@@ -5,7 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy": "wsl pm2 deploy /mnt/c/Projects/lindelof.dev/ecosystem.config.js production"
+    "deploy": "wsl pm2 deploy /mnt/c/Projects/lindelof.dev/ecosystem.config.js production --force"
   },
   "devDependencies": {
     "@nuxt/content": "^2.0.1",
